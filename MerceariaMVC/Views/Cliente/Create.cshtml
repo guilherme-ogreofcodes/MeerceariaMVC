@@ -1,0 +1,55 @@
+﻿@model MerceariaMVC.Models.Cliente
+
+@{
+    ViewData["Title"] = "Novo Cliente";
+}
+
+<div class="page-header">
+    <div class="page-title">
+        <h1>Cadastrar Cliente</h1>
+        <p>Preencha os dados do novo cliente da mercearia.</p>
+    </div>
+    <a asp-action="Index" class="btn btn-secondary">
+        <i class="bi bi-arrow-left"></i> Voltar
+    </a>
+</div>
+
+<div class="table-card" style="padding: 2rem; max-width: 600px; margin: 0 auto;">
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group" style="margin-bottom: 1.2rem;">
+            <label asp-for="Nome" class="form-label" style="font-weight: 600; margin-bottom: 0.4rem; display: block;">Nome Completo</label>
+            <input asp-for="Nome" class="form-control" placeholder="Ex: Carlos Eduardo" />
+            <span asp-validation-for="Nome" class="text-danger" style="font-size: 0.8rem; color: var(--danger);"></span>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 1.2rem;">
+            <label asp-for="Email" class="form-label" style="font-weight: 600; margin-bottom: 0.4rem; display: block;">E-mail</label>
+            <input asp-for="Email" type="email" class="form-control" placeholder="exemplo@email.com" />
+            <span asp-validation-for="Email" class="text-danger" style="font-size: 0.8rem; color: var(--danger);"></span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+            <div class="form-group">
+                <label asp-for="Idade" class="form-label" style="font-weight: 600; margin-bottom: 0.4rem; display: block;">Idade</label>
+                <input asp-for="Idade" type="number" class="form-control" placeholder="Ex: 30" />
+                <span asp-validation-for="Idade" class="text-danger" style="font-size: 0.8rem; color: var(--danger);"></span>
+            </div>
+
+            <div class="form-group" style="display: flex; align-items: flex-end; padding-bottom: 0.5rem;">
+                <label style="display: flex; align-items: center; gap: 0.6rem; cursor: pointer; font-weight: 600;">
+                    <input asp-for="Ativo" type="checkbox" checked style="width: 20px; height: 20px; accent-color: var(--primary);" />
+                    Cliente Ativo
+                </label>
+            </div>
+        </div>
+
+        <div style="display: flex; gap: 0.75rem; justify-content: flex-end; border-top: 1px solid var(--border); padding-top: 1.2rem;">
+            <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            <button type="submit" class="btn btn-primary">
+                <i class="bi bi-check-lg"></i> Cadastrar Cliente
+            </button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,62 @@
+﻿@model MerceariaMVC.Models.Cliente
+
+@{
+    ViewData["Title"] = "Detalhes do Cliente";
+}
+
+<div class="page-header">
+    <div class="page-title">
+        <h1>Perfil do Cliente</h1>
+        <p>Visualizando informações detalhadas do cadastro.</p>
+    </div>
+    <a asp-action="Index" class="btn btn-secondary">
+        <i class="bi bi-arrow-left"></i> Voltar
+    </a>
+</div>
+
+<div class="table-card" style="padding: 2rem; max-width: 600px; margin: 0 auto;">
+    <!-- Avatar e Nome Principal -->
+    <div style="display: flex; align-items: center; gap: 1.25rem; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border);">
+        <div style="width: 60px; height: 60px; border-radius: 50%; background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.8rem;">
+            <i class="bi bi-person"></i>
+        </div>
+        <div>
+            <h2 style="font-size: 1.3rem; font-weight: 700; margin: 0;">@Model.Nome</h2>
+            <div style="margin-top: 0.3rem;">
+                @if (Model.Ativo)
+                {
+                    <span class="badge badge-success">Cliente Ativo</span>
+                }
+                else
+                {
+                    <span class="badge badge-danger">Cliente Inativo</span>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Informações em Grid -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+        <div>
+            <span style="font-size: 0.75rem; color: var(--text-muted); display: block; font-weight: 600; text-transform: uppercase;">Código</span>
+            <strong style="font-size: 1rem;">#@Model.IdCliente</strong>
+        </div>
+
+        <div>
+            <span style="font-size: 0.75rem; color: var(--text-muted); display: block; font-weight: 600; text-transform: uppercase;">Idade</span>
+            <strong style="font-size: 1rem;">@Model.Idade anos</strong>
+        </div>
+
+        <div style="grid-column: span 2;">
+            <span style="font-size: 0.75rem; color: var(--text-muted); display: block; font-weight: 600; text-transform: uppercase;">E-mail de Contato</span>
+            <strong style="font-size: 1rem; color: var(--text-main);">@Model.Email</strong>
+        </div>
+    </div>
+
+    <!-- Botão para Edição Rápida -->
+    <div style="display: flex; gap: 0.75rem; justify-content: flex-end; border-top: 1px solid var(--border); padding-top: 1.2rem;">
+        <a asp-action="Edit" asp-route-id="@Model.IdCliente" class="btn btn-primary">
+            <i class="bi bi-pencil"></i> Editar Cliente
+        </a>
+    </div>
+</div>

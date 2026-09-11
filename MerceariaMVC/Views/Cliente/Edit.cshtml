@@ -1,0 +1,58 @@
+﻿@model MerceariaMVC.Models.Cliente
+
+@{
+    ViewData["Title"] = "Editar Cliente";
+}
+
+<div class="page-header">
+    <div class="page-title">
+        <h1>Editar Cliente</h1>
+        <p>Atualize as informações do cadastro #@Model.IdCliente.</p>
+    </div>
+    <a asp-action="Index" class="btn btn-secondary">
+        <i class="bi bi-arrow-left"></i> Voltar
+    </a>
+</div>
+
+<div class="table-card" style="padding: 2rem; max-width: 600px; margin: 0 auto;">
+    <form asp-action="Edit">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <!-- ID OCULTO NECESSÁRIO PARA O POST -->
+        <input type="hidden" asp-for="IdCliente" />
+
+        <div class="form-group" style="margin-bottom: 1.2rem;">
+            <label asp-for="Nome" class="form-label" style="font-weight: 600; margin-bottom: 0.4rem; display: block;">Nome Completo</label>
+            <input asp-for="Nome" class="form-control" />
+            <span asp-validation-for="Nome" class="text-danger" style="font-size: 0.8rem; color: var(--danger);"></span>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 1.2rem;">
+            <label asp-for="Email" class="form-label" style="font-weight: 600; margin-bottom: 0.4rem; display: block;">E-mail</label>
+            <input asp-for="Email" type="email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger" style="font-size: 0.8rem; color: var(--danger);"></span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+            <div class="form-group">
+                <label asp-for="Idade" class="form-label" style="font-weight: 600; margin-bottom: 0.4rem; display: block;">Idade</label>
+                <input asp-for="Idade" type="number" class="form-control" />
+                <span asp-validation-for="Idade" class="text-danger" style="font-size: 0.8rem; color: var(--danger);"></span>
+            </div>
+
+            <div class="form-group" style="display: flex; align-items: flex-end; padding-bottom: 0.5rem;">
+                <label style="display: flex; align-items: center; gap: 0.6rem; cursor: pointer; font-weight: 600;">
+                    <input asp-for="Ativo" type="checkbox" style="width: 20px; height: 20px; accent-color: var(--primary);" />
+                    Cliente Ativo
+                </label>
+            </div>
+        </div>
+
+        <div style="display: flex; gap: 0.75rem; justify-content: flex-end; border-top: 1px solid var(--border); padding-top: 1.2rem;">
+            <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            <button type="submit" class="btn btn-primary">
+                <i class="bi bi-save"></i> Salvar Alterações
+            </button>
+        </div>
+    </form>
+</div>
