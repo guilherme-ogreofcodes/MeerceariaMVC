@@ -1,10 +1,6 @@
-Para incluir as imagens do repositório no seu **`README.md`**, você utiliza o caminho relativo da pasta **`Imagens`** onde elas estão salvas.
 
-Adicionei a seção **📷 Telas do Sistema** no Índice e no corpo do texto com as três imagens (`TelaInicial.png`, `TelaProdutos.png` e `TelaClientes.png`), além de incluir a pasta `Imagens` na árvore de estrutura do projeto.
 
-Aqui está o código completo do **`README.md`** atualizado para você copiar e colar:
 
-```markdown
 <div align="center">
 
 # 🛒 MerceariaMVC
