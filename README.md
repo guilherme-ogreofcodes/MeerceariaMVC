@@ -90,15 +90,19 @@ A conexão deve ser configurada no arquivo `appsettings.json`:
 
 ### 🏠 Tela Inicial / Dashboard
 
----
+![Tela Inicial](https://raw.githubusercontent.com/guilherme-ogreofcodes/MerceariaMVC/main/MerceariaMVC/Imagens/TelaInicial.png)
+
 
 ### 📦 Gestão de Produtos
 
----
+
+![Tela de Produtos](https://raw.githubusercontent.com/guilherme-ogreofcodes/MerceariaMVC/main/MerceariaMVC/Imagens/TelaProdutos.png)
+
 
 ### 👥 Gestão de Clientes
 
----
+
+![Tela de Clientes](https://raw.githubusercontent.com/guilherme-ogreofcodes/MerceariaMVC/main/MerceariaMVC/Imagens/TelaClientes.png)
 
 # ▶️ Como Executar
 
